@@ -1,0 +1,102 @@
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+nav {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,92,1) 0%, rgba(154,75,143,1) 0%, rgba(0,212,255,1) 100%);
+    display: flex; 
+    justify-content: space-between;
+    height: 10vh;
+    align-items: center;
+    padding: 15px; 
+}
+.logo img {
+    height: 6vh;
+    object-fit: contain;
+}
+ul {
+    display: flex;
+}
+li {
+    list-style-type: none;
+}
+ul li a {
+    text-decoration: none;
+    margin-left: 20px; 
+    font-size: 1.2rem;
+    color: #fff;
+}
+ul li a:hover {
+    color: #F2771A;
+}
+.banner {
+    width: 100vw;
+    height: 90vh; 
+    background: url("https://wallpaperaccess.com/full/3519715.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: contain;
+    position: relative;
+}
+.banner::before {
+    content: " ";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    left: 0; 
+    top: 0;
+    bottom: 0; 
+    right: 0;
+    background-color: #111;
+    opacity: 0.8;
+}
+.banner__contents {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    width: 30%;
+}
+.svg_bike {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 30%;
+}
+.banner__contents p{
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+.banner__contents > button {
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,92,1) 0%, rgba(154,75,143,1) 0%, rgba(0,212,255,1) 100%); */
+    padding: 10px; 
+    border: none; 
+    outline: none;
+    width: 35%;
+    border-radius: 7px;
+    margin-top: 20px; 
+    margin-right: 10px; 
+    color: #000;
+    position: relative;
+    z-index: 1;
+}
+
+.banner__contents > button::before {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,92,1) 0%, rgba(154,75,143,1) 0%, rgba(0,212,255,1) 100%);
+    content: "";
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    top: 0; 
+    bottom: 0;
+    z-index: -1;
+    color: white;
+    transform: scaleX(0);
+    transition: all 0.5s ease-in-out;
+    transform-origin: left;
+}
+.banner__contents > button:hover::before {
+    transform: scaleX(1);
+}

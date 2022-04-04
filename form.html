@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+    .form1 label{
+        display: inline-block;
+        width: 100px
+    }
+    .form2 label{
+        display: inline-block;
+        width: 150px
+    }
+    table{
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+    }
+    td {
+        padding: 20px;
+    }
+    </style>
+</head>
+<body>
+    <form class="form1">
+        <fieldset>
+            <legend>Info</legend>
+            <label>FullName: </label>
+            <input type="text" placeholder="your full name" required /><br /><br />
+            <label>Email: </label>
+            <input type="email" placeholder="your email" required /><br /> <br />
+            <label>Age: </label>
+            <input type="text" placeholder="your age"/><br /> <br />
+            <label>Address: </label>
+            <input type="text" placeholder="your age" /> <br /> <br />
+            <label>Phone: </label>
+            <input type="text" placeholder="your contact number" /><br /> <br />
+            <label>Gender: </label>
+            <input type="radio"value="Male" name="gender" checked>
+            <label>Male</label>
+            <input type="radio" value="Female" name="gender">
+            <label>Female</label>
+            <input type="radio" value="Other" name="gender">
+            <label>Other</label> <br /> <br />
+            <button>Submit</button>
+        </fieldset>
+    </form><br>
+
+    <form>
+        <fieldset>
+            <legend>Academic</legend>
+            <table>
+                <thead>
+                    <th>College Name</th>
+                    <th>Board</th>
+                    <th>Stream</th>
+                    <th>Passed Year</th>
+                    <th>GPA</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Interested to Study: </p>
+            <input type="checkbox" value="BIT" />
+            <label>BIT</label>
+            <input type="checkbox" value="BIM" />
+            <label>BIM</label>
+            <input type="checkbox" value="BCA" />
+            <label>BCA</label>
+            <input type="checkbox" value="BSC CSIT" />
+            <label>BSC CSIT</label><br /><br />
+            <label>Preferred College: </label>
+            <select>
+                <option value="Kist">Kist</option>
+                <option value="Nami">Nami</option>
+                <option value="Herald">Herald</option>
+                <option value="British">British</option>
+                <option value="ISMT">ISMT</option>
+            </select>
+        </fieldset>
+    </form><br /> <br>
+    <form class="form2" onsubmit="validateForm()">
+        <fieldset>
+            <legend>Parents Info</legend>
+            <label>Mother Name: </label>
+            <input type="text" placeholder="your mother name" id="mname" onkeyup="validateFname()" required />
+            <p id="mnameErrMsg" style="color: red;"></p>
+            <label>Father Name: </label>
+            <input type="text" placeholder="your father name" id="fatherName" required onkeyup="validateFathername()" />
+            <p id="fnameErrMsg" style="color: red;"></p>
+            <label>Temporary Address: </label>
+            <input type="text" placeholder="your temporary address" required /><br><br>
+            <label>Permanent Address: </label>
+            <input type="text" placeholder="your permanent address" required /><br><br>
+            <label>Contact Number: </label>
+            <input type="text" placeholder="your contact number" required /><br><br>
+            <button type="submit">submit</button>
+        </fieldset>
+    </form>
+    <script>
+        let fname = document.getElementById("mname");
+        let fathername = document.getElementById("fatherName");
+        function validateFname() {
+            console.log(fname.value);
+            let regex = /[a-zA-Z]+$/g;
+            if(fname.value.match(regex)){
+                console.log("valid");
+            }else {
+                let errmsg = document.getElementById("mnameErrMsg");
+                console.log(errmsg);
+                errmsg.innerText = "Invalid Name";
+            }
+        }
+        function validateFathername() {
+            let regex = /[a-zA-Z]+$/g;
+            if(fathername.value.match(regex)){
+                console.log("valid");
+            }else {
+                let errmsg = document.getElementById("fnameErrMsg");
+                console.log(errmsg);
+                errmsg.innerText = "Invalid Name";
+            }
+        }
+    </script>
+</body>
+</html>
