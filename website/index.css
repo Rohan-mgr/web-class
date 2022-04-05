@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  overflow-x: hidden;
+}
+
 nav {
   background: linear-gradient(
     90deg,
@@ -23,55 +27,54 @@ nav {
 }
 ul {
   display: flex;
+  align-items: center;
   position: relative;
+  z-index: 1;
+  text-align: center;
 }
 li {
   list-style-type: none;
+  padding: 25px 0;
   width: 120px;
+  height: 13vh;
   text-align: center;
+  align-content: center;
+  cursor: pointer;
 }
-/* ul li.active {
-  background: #fff;
-} */
 ul li a {
   text-decoration: none;
-  display: block;
   font-size: 1.2rem;
-  color: #fff;
+  color: #000;
 }
-ul li.active a {
-  color: black;
-}
-.slide {
+ul .slide {
   position: absolute;
+  border-radius: 0.58rem;
   width: 120px;
-  height: 26px;
-  top: 0;
+  height: 30px;
+  top: 23px;
   left: 0;
-  border: 1px solid black;
-  background: #fff;
+  background-color: #ccc;
+  z-index: -1;
+  display: none;
   transition: 0.5s;
-  opacity: 0;
 }
-ul li:nth-child(1).active ~ .slide {
+ul li:hover ~ .slide {
+  display: block;
+}
+ul li:nth-child(1):hover ~ .slide {
   left: 0;
-  opacity: 1;
 }
-ul li:nth-child(2).active ~ .slide {
+ul li:nth-child(2):hover ~ .slide {
   left: 120px;
-  opacity: 1;
 }
-ul li:nth-child(3).active ~ .slide {
+ul li:nth-child(3):hover ~ .slide {
   left: 240px;
-  opacity: 1;
 }
-ul li:nth-child(4).active ~ .slide {
+ul li:nth-child(4):hover ~ .slide {
   left: 360px;
-  opacity: 1;
 }
 
 .banner {
-  width: 100vw;
   height: 90vh;
   background: url("https://img.freepik.com/free-vector/downhill-bike-character-illustration_604090-27.jpg");
   background-repeat: no-repeat;
@@ -142,6 +145,7 @@ ul li:nth-child(4).active ~ .slide {
   color: #000;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 .banner__contents > button:hover {
