@@ -46,6 +46,9 @@ ul li a {
   font-size: 1.2rem;
   color: #000;
 }
+ul li:hover a {
+  color: #ffff;
+}
 ul .slide {
   position: absolute;
   border-radius: 0.58rem;
@@ -53,10 +56,17 @@ ul .slide {
   height: 30px;
   top: 23px;
   left: 0;
-  background-color: #ccc;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(121, 9, 92, 1) 0%,
+    rgba(154, 75, 143, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
   z-index: -1;
   display: none;
   transition: 0.5s;
+  box-shadow: 0 0 4px #000;
 }
 ul li:hover ~ .slide {
   display: block;
