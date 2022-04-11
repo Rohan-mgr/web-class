@@ -266,3 +266,17 @@ ul li:nth-child(4):hover ~ .slide {
   width: 35%;
   text-align: left;
 }
+.carousel-control-next, .carousel-control-prev {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(121, 9, 92, 1) 0%,
+    rgba(154, 75, 143, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  clip-path: circle();
+  width: 2rem; 
+  height: 2rem; 
+  margin: auto 2rem;
+  padding: 5px;
+}
