@@ -280,3 +280,23 @@ ul li:nth-child(4):hover ~ .slide {
   margin: auto 2rem;
   padding: 5px;
 }
+footer {
+  height: 20vh;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(121, 9, 92, 1) 0%,
+    rgba(154, 75, 143, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  display: grid;
+  place-items: center;
+}
+footer .fa-facebook, .fa-instagram, .fa-github{
+  color: #fff;
+ font-size: 2rem;
+ margin: 10px; 
+} 
+footer a i:hover {
+  color: #3A3845;
+}
